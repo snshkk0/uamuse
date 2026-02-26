@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    font-style: normal;
+    text-decoration: none;
+    color: #FFFFFF;
+    padding: 0 50px;
+}
+
+nav {
+    background-color: #292524;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+h4 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    
+}
+    
+h5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+input {
+    padding: 10px;
+    margin: 10px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.iframe {
+    padding: 50px;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    
+}
+
+footer {
+    background-color: #292524;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: auto;
+}
+
+.footer {
+    color: #FFFFFF;
+}
+
+
+.mood_button {
+    display: flex;
+    flex-direction: row;      
+    justify-content: center;  
+    gap: 20px;  
+    flex-wrap: wrap;  
+    padding-top: 50px;
+}
+
+button {
+    padding: 20px;
+    cursor: pointer;
+}
+
+.checkbox-consent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+.checkbox-consent input[type="checkbox"] {
+    margin: 0;
+    width: auto;
+}
+
+li {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.submit {
+    background-color: #292524;
+    color: #FFFFFF;
+    cursor: pointer;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 20px auto;
+}
+
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.song {
+    color: #292524;
+}
+
+
+.discover_art {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+}
+.logo {
+    width: 200px;
+    height: auto;
+    margin: 50px;
+}
+.name {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -35%;
+}
+
+.songs {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0px;
+    position: relative;
+    left: -10%;
+}
+
+.songs li {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    position: relative;
+}
+.my_photo {
+    width: 200px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.about_music {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+}
