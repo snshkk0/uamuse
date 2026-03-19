@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 html, body {
@@ -11,13 +12,24 @@ html, body {
 body {
     display: flex;
     flex-direction: column;
+    background-image: url(background.jpg);
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
 }
 
 a {
     font-style: normal;
+    font-weight: bold;
     text-decoration: none;
-    color: #FFFFFF;
+    color: #292524;
     padding: 0 50px;
+
 }
 
 nav {
@@ -199,4 +211,23 @@ table {
     text-align: center;
     padding: 20px;
     font-style: italic;
+}
+
+.shape {
+    clip-path:circle(40%);
+    background-color: #FDBDC1;
+    justify-content: space-between;
+    
+}
+
+.div_nav {
+    padding: 1.3rem;
+}
+
+.shape:hover {
+    background-color:#ac7074 ;
+}
+
+.active {
+    background-color: #779EAF;
 }
