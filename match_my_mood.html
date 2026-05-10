@@ -15,19 +15,28 @@
                 <li class="shape"><a href="./top_charts.html" rel="noopener noreferrer"><div class="div_nav">TOP CHARTS</div></a></li>
                 <li class="shape"><a href="./discover.html" rel="noopener noreferrer"><div class="div_nav">DISCOVER</div></a></li>
                 <li class="shape"><a href="./about_me.html" rel="noopener noreferrer"><div class="div_nav">ABOUT ME</div></a></li>
+                <li class="shape_login"><a href="./log_in.html" rel="noopener noreferrer"><div class="div_nav">login / register</div></a></li>
             </ul>
         </nav>
     </header>
-    <h1>PICK YOUR MOOD!</h1>
-    <div class="mood_button">
-        <button>SAD</button>
-        <button>HAPPY</button>
-        <button>IN LOVE</button>
-        <button>ANGRY</button>
-        <button>LONELY</button>
+    <h1 class="hero_section">PICK YOUR GENRE!</h1>
+    <div class="genre_grid" id="genre_button">
+        <button class="genre_button" data_playlist="37i9dQZF1DWUxthdWUs4N4" onclick="showGenreMusic('rock')">ROCK</button>
+        <button class="genre_button" data_playlist="1bpgWVBFuPiGIzEmGlHiFJ" onclick="showGenreMusic('pop')">POP</button>
+        <button class="genre_button" data_playlist="37i9dQZF1DWZU4i93guc1c" onclick="showGenreMusic('indie')">INDIE</button>
+        <button class="genre_button" data_playlist="37i9dQZF1DX9lOLSAzbbCv" onclick="showGenreMusic('rap')">RAP</button>
+        <button class="genre_button" class="dance" data_playlist="37i9dQZF1DXcU2mDfNlJqd" onclick="showGenreMusic('dance hits')">DANCE HITS</button>
     </div>
 
 
 <footer><p class="footer">слухайте українське!</p></footer>
+<div id="spotify_modal" class="modal">
+    <div class="modal_content">
+        <span class="close_button">&times;</span>
+        <div id="spotify_player_container">
+            </div>
+    </div>
+</div>
 </body>
+<script src="script.js"></script>
 </html>
