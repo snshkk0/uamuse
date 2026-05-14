@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>uamuse</title>
-     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
@@ -13,8 +13,8 @@
     <header>
         <nav>
             <ul class="nav-links">
-                <li class="shape active"><a href="./index.html" rel="noopener noreferrer" ><div class="div_nav">HOME</div></a></li>
-                <li class="shape"><a href="./match_my_mood.html" rel="noopener noreferrer" ><div class="div_nav">MATCH MY MOOD</div></a></li>
+                <li class="shape active"><a href="./index.html" rel="noopener noreferrer"><div class="div_nav">HOME</div></a></li>
+                <li class="shape"><a href="./match_my_mood.html" rel="noopener noreferrer"><div class="div_nav">MATCH MY MOOD</div></a></li>
                 <li class="shape"><a href="./top_charts.html" rel="noopener noreferrer"><div class="div_nav">TOP CHARTS</div></a></li>
                 <li class="shape"><a href="./discover.html" rel="noopener noreferrer"><div class="div_nav">DISCOVER</div></a></li>
                 <li class="shape"><a href="./about_me.html" rel="noopener noreferrer"><div class="div_nav">ABOUT ME</div></a></li>
@@ -22,41 +22,85 @@
             </ul>
         </nav>
     </header>
-    <h1 class="uamuse hero_section">UAMUSE</h1>
-    <h4>DISCOVER YOUR FAVORITE 
-UKRAINIAN ARTISTS
- IN A BLINK OF AN EYE</h4>
 
- <div class="iframe"><iframe width="560" height="315" src="https://www.youtube.com/embed/ZktLtDKSYmQ?si=m9g5rc8dDSW61IiH" 
- title="YouTube video player" frameborder="0" autoplay="1"
- allow="accelerometer; clipboard-write; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" 
- referrerpolicy="strict-origin-when-cross-origin" 
- allowfullscreen></iframe></div>
+    <!-- Hero -->
+    <section class="home-hero">
+        <h1 class="uamuse">UAMUSE</h1>
+        <p class="hero-tagline">Your gateway to Ukrainian music</p>
+        <a href="./discover.html"><button class="hero-cta">START EXPLORING</button></a>
+    </section>
 
+    <!-- Parallax band 1 -->
+    <div class="parallax-band"></div>
 
- <h4>WHY IS IT USEFUL?</h4>
- <ul>
-    <li>You can easily discover new artists everyday</li>
-    <li>Easy access to top charts</li>
-    <li>Personalized recommendations based on your mood</li>
- </ul>
+    <!-- What is UAMUSE -->
+    <section class="home-section">
+        <h2 class="section-title">WHAT IS UAMUSE?</h2>
+        <p class="section-desc">UAMUSE is a platform built to help you discover, explore, and fall in love with the sounds of Ukraine — from indie to folk, pop to electronic.</p>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <p class="feature-icon">&#9835;</p>
+                <h3 class="feature-title">DISCOVER</h3>
+                <p class="feature-text">Find new Ukrainian artists every day, handpicked and ready to listen.</p>
+            </div>
+            <div class="feature-card">
+                <p class="feature-icon">&#9650;</p>
+                <h3 class="feature-title">TOP CHARTS</h3>
+                <p class="feature-text">Stay updated with the hottest and most-played tracks right now.</p>
+            </div>
+            <div class="feature-card">
+                <p class="feature-icon">&#9788;</p>
+                <h3 class="feature-title">MATCH MY MOOD</h3>
+                <p class="feature-text">Tell us how you feel and we'll find the perfect soundtrack for your moment.</p>
+            </div>
+        </div>
+    </section>
 
- <br>
-<h4>GET IN TOUCH</h4>
-<h5>Leave your email so we can contact you!</h5>
-<form name="text"> <input type="text" placeholder="Enter your email"></form>
-<button class="submit">SUBMIT</button>
-<label class="checkbox-consent">
-    <input type="checkbox" name="contact" value="consent">
-    <span>I consent to be contacted by email</span>
-</label>
- 
+    <!-- Parallax band 2 -->
+    <div class="parallax-band"></div>
 
+    <!-- Why UAMUSE -->
+    <section class="home-section">
+        <h2 class="section-title">WHY UAMUSE?</h2>
+        <div class="why-grid">
+            <div class="why-item">
+                <span class="why-number">01</span>
+                <p class="why-text">Easily discover new Ukrainian artists every day</p>
+            </div>
+            <div class="why-item">
+                <span class="why-number">02</span>
+                <p class="why-text">Instant access to real-time top charts</p>
+            </div>
+            <div class="why-item">
+                <span class="why-number">03</span>
+                <p class="why-text">Personalized recommendations based on your mood</p>
+            </div>
+            <div class="why-item">
+                <span class="why-number">04</span>
+                <p class="why-text">Support Ukrainian culture and independent artists</p>
+            </div>
+        </div>
+    </section>
 
- <footer><p class="footer">слухайте українське!</p></footer>
+    <!-- Parallax band 3 -->
+    <div class="parallax-band"></div>
 
-<script src="script.js" defer></script>
- 
+    <!-- Get in touch -->
+    <section class="home-section" style="padding-bottom: 100px;">
+        <h2 class="section-title">GET IN TOUCH</h2>
+        <p class="section-desc">Leave your email and we'll keep you updated on new features and artists.</p>
+        <form name="text" class="contact-form">
+            <input type="text" placeholder="Enter your email">
+            <button class="submit" type="submit">SUBMIT</button>
+        </form>
+        <label class="checkbox-consent">
+            <input type="checkbox" name="contact" value="consent">
+            <span>I consent to be contacted by email</span>
+        </label>
+    </section>
+
+    <footer><p class="footer">слухайте українське!</p></footer>
+
+    <script src="script.js" defer></script>
 </body>
-
 </html>

@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>uamuse</title>
+    <title>uamuse — about me</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-       <nav>
+        <nav>
             <ul class="nav-links">
-                <li class="shape"><a href="./index.html" rel="noopener noreferrer" ><div class="div_nav">HOME</div></a></li>
-                <li class="shape"><a href="./match_my_mood.html" rel="noopener noreferrer" ><div class="div_nav">MATCH MY MOOD</div></a></li>
+                <li class="shape"><a href="./index.html" rel="noopener noreferrer"><div class="div_nav">HOME</div></a></li>
+                <li class="shape"><a href="./match_my_mood.html" rel="noopener noreferrer"><div class="div_nav">MATCH MY MOOD</div></a></li>
                 <li class="shape"><a href="./top_charts.html" rel="noopener noreferrer"><div class="div_nav">TOP CHARTS</div></a></li>
                 <li class="shape"><a href="./discover.html" rel="noopener noreferrer"><div class="div_nav">DISCOVER</div></a></li>
                 <li class="shape active"><a href="./about_me.html" rel="noopener noreferrer"><div class="div_nav">ABOUT ME</div></a></li>
@@ -19,14 +22,50 @@
             </ul>
         </nav>
     </header>
-    
-    <h1 class="hero_section">ABOUT ME</h1>
 
-    <img class="my_photo" src="./me.jpg" alt="My Photo">
-    <p class="about_music">Hi there!  I'm a passionate music lover and the creator of this website. I built this platform to share my love for music and help others discover new tunes that match their mood. When I'm not curating playlists or exploring new genres, you can find me attending live concerts or jamming out with friends. Music has always been a big part of my life, and I'm excited to share that passion with all of you through this website. Feel free to reach out if you have any suggestions or just want to chat about music!</p>
- 
+    <section class="home-hero" style="min-height: 220px;">
+        <h1>ABOUT ME</h1>
+    </section>
 
+    <div class="parallax-band"></div>
+
+    <section class="home-section about-section">
+        <div class="about-card">
+            <img class="about-photo" src="./me.jpg" alt="My Photo">
+            <div class="about-text">
+                <h2 class="section-title" style="text-align:left; margin-bottom: 20px;">Hi there!</h2>
+                <p class="about-bio">I'm a passionate music lover and the creator of UAMUSE. I built this platform to share my love for music and help others discover new tunes that match their mood.</p>
+                <p class="about-bio">When I'm not curating playlists or exploring new genres, you can find me attending live concerts or jamming out with friends. Music has always been a big part of my life, and I'm excited to share that passion with all of you.</p>
+                <p class="about-bio">Feel free to reach out if you have any suggestions or just want to chat about music!</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="parallax-band"></div>
+
+    <section class="home-section" style="padding-bottom: 100px;">
+        <h2 class="section-title">WHAT I LOVE</h2>
+        <div class="feature-cards">
+            <div class="feature-card">
+                <p class="feature-icon">&#9835;</p>
+                <h3 class="feature-title">LIVE MUSIC</h3>
+                <p class="feature-text">Nothing beats the energy of a live concert — the crowd, the sound, the feeling.</p>
+            </div>
+            <div class="feature-card">
+                <p class="feature-icon">&#9836;</p>
+                <h3 class="feature-title">UKRAINIAN ARTISTS</h3>
+                <p class="feature-text">Proud to spotlight the incredible talent coming out of Ukraine every day.</p>
+            </div>
+            <div class="feature-card">
+                <p class="feature-icon">&#9792;</p>
+                <h3 class="feature-title">DISCOVERY</h3>
+                <p class="feature-text">That feeling when you find a song that perfectly captures your mood — that's why I built this.</p>
+            </div>
+        </div>
+    </section>
 
     <footer><p class="footer">слухайте українське!</p></footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
