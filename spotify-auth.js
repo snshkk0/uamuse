@@ -73,7 +73,8 @@ async function showLoggedIn(token) {
                 ${user.images?.[0] ? `<img src="${user.images[0].url}" style="width:80px;height:80px;border-radius:50%;margin-bottom:10px">` : ''}
                 <p class="login-label">Logged in as</p>
                 <p style="color:#ffd700; font-size:1.3rem; font-weight:bold; margin: 6px 0 16px">${user.display_name}</p>
-                <button class="login-btn" onclick="logout()">LOGOUT</button>
+                <a href="./index.html"><button class="spotify-btn" type="button">CONTINUE BROWSING →</button></a>
+                <button class="login-btn" style="margin-top:10px" onclick="logout()">LOGOUT</button>
             </div>
         `;
     }
