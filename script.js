@@ -19,9 +19,9 @@ document.querySelectorAll('.genre_button').forEach(button => {
 });
 
 
-closeBtn.onclick = () => {
+if (closeBtn) closeBtn.onclick = () => {
     modal.style.display = "none";
-    playerContainer.innerHTML = ""; 
+    playerContainer.innerHTML = "";
 };
 
 
