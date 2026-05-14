@@ -43,16 +43,22 @@ if (footerTag) {
 
 function activatePartyMode() {
     const logo = document.querySelector('h1') || document.querySelector('.uamuse-title');
-    
-    if (logo) {
-      
+    if (!logo) return;
+
+    logo.classList.add('logo-settling');
+
+    setTimeout(() => {
+        logo.classList.remove('logo-settling');
         logo.classList.add('dancing_logo');
-        
-        console.log("Party mode activated!");
 
         setTimeout(() => {
+            logo.classList.add('logo-settling');
             logo.classList.remove('dancing_logo');
+
+            setTimeout(() => {
+                logo.classList.remove('logo-settling');
+            }, 400);
         }, 5000);
-    }
+    }, 400);
 }
 
