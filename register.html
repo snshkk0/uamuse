@@ -10,23 +10,24 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
 </head>
 <body>
-<h1 class="hero_section">LOGIN</h1>
+    <h1 class="hero_section">REGISTER</h1>
 
     <div class="login-card">
         <form class="login-form">
             <label class="login-label" for="uname">Username</label>
-            <input class="login-input" type="text" id="uname" placeholder="Enter Username" name="uname" required>
+            <input class="login-input" type="text" id="uname" placeholder="Choose a Username" name="uname" required>
+
+            <label class="login-label" for="email">Email</label>
+            <input class="login-input" type="email" id="email" placeholder="Enter your Email" name="email" required>
 
             <label class="login-label" for="psw">Password</label>
-            <input class="login-input" type="password" id="psw" placeholder="Enter Password" name="psw" required>
+            <input class="login-input" type="password" id="psw" placeholder="Create a Password" name="psw" required>
 
-            <label class="login-remember">
-                <input type="checkbox" checked name="remember">
-                Remember me
-            </label>
+            <label class="login-label" for="psw2">Confirm Password</label>
+            <input class="login-input" type="password" id="psw2" placeholder="Confirm your Password" name="psw2" required>
 
-            <button class="login-btn" type="submit">LOGIN</button>
-            <p class="login-switch">Don't have an account? <a href="./register.html">Register</a></p>
+            <button class="login-btn" type="submit">REGISTER</button>
+            <p class="login-switch">Already have an account? <a href="./log_in.html">Login</a></p>
         </form>
     </div>
 
