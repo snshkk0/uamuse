@@ -851,3 +851,173 @@ table {
     padding: 8px 0;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
+
+.artist-avatar {
+    width: 160px;
+    height: 160px;
+    border-radius: 8px;
+    background: #800000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: bold;
+    color: rgba(245, 245, 245, 0.6);
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.artist-meta {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.artist-tag {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: rgba(245, 245, 245, 0.45);
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.artist-badge {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    color: #ffd700;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    padding: 3px 10px;
+    border-radius: 20px;
+}
+
+.artist-card + .artist-card {
+    margin-top: 24px;
+}
+
+/* ── Responsive ── */
+
+@media (max-width: 900px) {
+    .feature-cards {
+        grid-template-columns: 1fr;
+    }
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+    .about-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .about-text .section-title {
+        text-align: center !important;
+    }
+    .artist-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .artist-avatar {
+        width: 100px;
+        height: 100px;
+        font-size: 2.5rem;
+    }
+    .artist-logo {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    nav {
+        height: auto;
+        padding: 8px 4px;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2px;
+    }
+    .shape, .shape_login {
+        padding: 6px 8px;
+    }
+    .div_nav {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.72rem;
+    }
+    h1 {
+        font-size: 64px;
+    }
+    .home-section {
+        padding: 50px 20px;
+    }
+    .page-hero {
+        padding: 40px 20px 30px;
+    }
+    .genre_grid {
+        grid-template-columns: 1fr;
+    }
+    #chartsTable th,
+    #chartsTable td {
+        padding: 12px 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 44px;
+    }
+    .hero-tagline {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+    .section-title {
+        font-size: 1.4rem;
+    }
+    .home-hero {
+        min-height: 50vh;
+        padding: 40px 16px;
+    }
+    .parallax-band {
+        min-height: 100px;
+    }
+    .login-form {
+        padding: 24px 16px;
+    }
+    .login-card {
+        padding: 24px 16px 100px;
+    }
+    .contact-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .contact-form input {
+        width: 100%;
+    }
+    .contact-form .submit {
+        width: 100% !important;
+        text-align: center;
+    }
+    .feature-card {
+        padding: 24px 16px;
+    }
+    .why-item {
+        padding: 20px 16px;
+    }
+    .artist-card {
+        padding: 24px 16px;
+    }
+    .about-photo {
+        width: 150px;
+        height: 150px;
+    }
+    table {
+        font-size: 0.85rem;
+    }
+    footer {
+        padding: 14px;
+    }
+}
