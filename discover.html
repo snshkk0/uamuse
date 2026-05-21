@@ -31,6 +31,11 @@
 
     <div class="parallax-band"></div>
 
+    <!-- Daily Pick -->
+    <section class="home-section" style="padding-bottom: 0;">
+        <div id="daily-pick-wrap"></div>
+    </section>
+
     <section class="home-section" style="padding-bottom: 120px;">
 
         <div class="artist-card">
@@ -114,5 +119,126 @@
 
     <footer><p class="footer">слухайте українське!</p></footer>
     <script src="parallax.js" defer></script>
+    <script>
+    const UKRAINIAN_ARTISTS = [
+        'Kalush Orchestra', 'ONUKA', 'Tvorchi', 'Go_A', 'Діти Інженерів',
+        'Jamala', 'Antytila', 'Океан Ельзи', 'The Hardkiss', 'Wellboy',
+        'MONATIK', 'Skofka', 'Pianoбой', 'Бумбокс', 'Друга Ріка',
+        'ДахаБраха', 'Alina Pash', 'KAZKA', 'alyona alyona', 'Bahroma',
+        'Max Barskih', 'Христина Соловій', 'Без Обмежень', 'Artbat',
+    ];
+
+    async function loadDailyPick() {
+        const wrap = document.getElementById('daily-pick-wrap');
+        const token = localStorage.getItem('spotify_token');
+
+        if (!token) {
+            wrap.innerHTML = `
+                <div class="daily-pick-card" style="text-align:center; padding: 40px 20px;">
+                    <p style="color:rgba(245,245,245,0.5); margin-bottom:16px;">Log in to get a personalised daily pick</p>
+                    <a href="./log_in.html"><button class="spotify-btn" style="width:auto !important; height:auto !important; padding: 12px 28px !important;">LOGIN WITH SPOTIFY</button></a>
+                </div>`;
+            return;
+        }
+
+        // Check cache — only refetch once per day
+        const today = new Date().toDateString();
+        const cached = localStorage.getItem('uamuse_daily_pick');
+        if (cached) {
+            try {
+                const parsed = JSON.parse(cached);
+                if (parsed.date === today) { renderPick(parsed.data); return; }
+            } catch(e) {}
+        }
+
+        wrap.innerHTML = `<div class="daily-pick-card" style="text-align:center; padding:40px; color:rgba(245,245,245,0.4);">Finding your daily pick…</div>`;
+
+        try {
+            // 1. Get recently played
+            let chosenArtist = null;
+            const recentRes = await fetch('https://api.spotify.com/v1/me/player/recently-played?limit=50', {
+                headers: { Authorization: `Bearer ${token}` }
+            });
+            const recent = await recentRes.json();
+
+            if (recent.error) { localStorage.removeItem('spotify_token'); return; }
+
+            // 2. Try to match a Ukrainian artist the user actually listened to
+            if (recent.items?.length) {
+                const played = recent.items.map(i => i.track.artists[0].name.toLowerCase());
+                chosenArtist = UKRAINIAN_ARTISTS.find(a =>
+                    played.some(p => p.includes(a.toLowerCase()) || a.toLowerCase().includes(p))
+                );
+            }
+
+            // 3. Fallback: rotate by day
+            if (!chosenArtist) {
+                const day = Math.floor(Date.now() / 86400000);
+                chosenArtist = UKRAINIAN_ARTISTS[day % UKRAINIAN_ARTISTS.length];
+            }
+
+            // 4. Search Spotify for the artist
+            const searchRes = await fetch(
+                `https://api.spotify.com/v1/search?q=${encodeURIComponent(chosenArtist)}&type=artist&limit=1`,
+                { headers: { Authorization: `Bearer ${token}` } }
+            );
+            const searchData = await searchRes.json();
+            const artist = searchData.artists?.items?.[0];
+            if (!artist) { wrap.innerHTML = ''; return; }
+
+            // 5. Get their latest release
+            const albumsRes = await fetch(
+                `https://api.spotify.com/v1/artists/${artist.id}/albums?include_groups=album,single,ep&limit=5&market=UA`,
+                { headers: { Authorization: `Bearer ${token}` } }
+            );
+            const albumsData = await albumsRes.json();
+            const release = albumsData.items?.[0];
+            if (!release) { wrap.innerHTML = ''; return; }
+
+            const data = { artist, release };
+            localStorage.setItem('uamuse_daily_pick', JSON.stringify({ date: today, data }));
+            renderPick(data);
+
+        } catch(err) {
+            wrap.innerHTML = '';
+            console.warn('Daily pick failed:', err.message);
+        }
+    }
+
+    function renderPick({ artist, release }) {
+        const wrap = document.getElementById('daily-pick-wrap');
+        const typeLabel = release.album_type.toUpperCase();
+        const releaseDate = new Date(release.release_date).toLocaleDateString('en-GB', { year:'numeric', month:'long', day:'numeric' });
+        const cover = release.images?.[0]?.url;
+        const artistImg = artist.images?.[0]?.url;
+        const trackCount = release.total_tracks;
+
+        wrap.innerHTML = `
+        <div class="daily-pick-card">
+            <div class="daily-pick-label">✦ TODAY'S PICK</div>
+            <div class="daily-pick-inner">
+                ${cover ? `<a href="${release.external_urls.spotify}" target="_blank" rel="noopener">
+                    <img src="${cover}" alt="${release.name}" class="daily-pick-cover">
+                </a>` : ''}
+                <div class="daily-pick-info">
+                    <div class="daily-pick-type">${typeLabel} · ${releaseDate}</div>
+                    <h2 class="daily-pick-title">${release.name}</h2>
+                    <div class="daily-pick-artist">
+                        ${artistImg ? `<img src="${artistImg}" class="daily-pick-artist-img" alt="${artist.name}">` : ''}
+                        <span>${artist.name}</span>
+                    </div>
+                    <p class="daily-pick-tracks">${trackCount} track${trackCount !== 1 ? 's' : ''}</p>
+                    <a href="${release.external_urls.spotify}" target="_blank" rel="noopener">
+                        <button class="spotify-btn" style="width:auto !important; height:auto !important; padding:12px 24px !important; margin-top:16px;">
+                            LISTEN ON SPOTIFY
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>`;
+    }
+
+    loadDailyPick();
+    </script>
 </body>
 </html>

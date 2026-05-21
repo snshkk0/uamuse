@@ -794,6 +794,107 @@ table {
     background: rgba(255, 255, 255, 0.04);
 }
 
+/* ── Daily Pick ──────────────────────────────────────────────────────── */
+.daily-pick-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px;
+    padding: 32px;
+    margin-bottom: 48px;
+    backdrop-filter: blur(8px);
+    max-width: 860px;
+    width: 100%;
+}
+
+.daily-pick-label {
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: #ffd700;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.daily-pick-inner {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.daily-pick-cover {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.daily-pick-cover:hover {
+    transform: scale(1.03);
+}
+
+.daily-pick-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.daily-pick-type {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: rgba(245,245,245,0.45);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.daily-pick-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #f5f5f5;
+    margin: 0 0 12px;
+    line-height: 1.2;
+}
+
+.daily-pick-artist {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    color: rgba(245,245,245,0.7);
+    margin-bottom: 6px;
+}
+
+.daily-pick-artist-img {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.daily-pick-tracks {
+    font-size: 0.85rem;
+    color: rgba(245,245,245,0.35);
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .daily-pick-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .daily-pick-artist {
+        justify-content: center;
+    }
+    .daily-pick-cover {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* ── Charts ──────────────────────────────────────────────────────────── */
 .chart-rank {
     color: #800000 !important;
     font-size: 1.1rem;
