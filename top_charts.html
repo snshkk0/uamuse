@@ -36,57 +36,28 @@
                 <tr>
                     <th>#</th>
                     <th>Artist</th>
-                    <th>Plays</th>
-                    <th>Last played</th>
+                    <th>Song</th>
                 </tr>
             </thead>
-            <tbody id="chartsBody">
-                <tr><td colspan="4" style="text-align:center; color:rgba(245,245,245,0.4); padding:40px;">Loading charts...</td></tr>
+            <tbody>
+                <tr>
+                    <td class="chart-rank">1</td>
+                    <td>Drevo</td>
+                    <td><a href="https://open.spotify.com/track/1DPI72Tcvw8g3ZTdn0xlJB?si=63139d70ac0b42f3" target="_blank" class="song">Енкарапіста</a></td>
+                </tr>
+                <tr>
+                    <td class="chart-rank">2</td>
+                    <td>Alena Omargalieva</td>
+                    <td><a href="https://open.spotify.com/track/0stBh1b8Oyi7gW3MdQQSGs?si=4023731bceb74029" target="_blank" class="song">Не п'яна — закохана</a></td>
+                </tr>
+                <tr>
+                    <td class="chart-rank">3</td>
+                    <td>Drevo</td>
+                    <td><a href="https://open.spotify.com/track/29qDVTQqe4jWIiPzQcQOev?si=9327597d4bc542a9" target="_blank" class="song">Смарагдове небо</a></td>
+                </tr>
             </tbody>
         </table>
     </section>
-
-    <script src="config.js"></script>
-    <script>
-        const API_URL = CONFIG.API_URL;
-
-        async function loadCharts() {
-            const tbody = document.getElementById('chartsBody');
-            try {
-                const userId = localStorage.getItem('uamuse_user_id');
-                const endpoint = userId
-                    ? `${API_URL}/charts/user/${userId}`
-                    : `${API_URL}/charts`;
-
-                const res  = await fetch(endpoint);
-                const rows = await res.json();
-
-                if (!rows.length) {
-                    tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; color:rgba(245,245,245,0.4); padding:40px;">
-                        No Ukrainian plays recorded yet — log in with Spotify to build your charts!
-                    </td></tr>`;
-                    return;
-                }
-
-                tbody.innerHTML = rows.map((row, i) => `
-                    <tr>
-                        <td class="chart-rank">${i + 1}</td>
-                        <td>${row.artist_name}</td>
-                        <td>${row.play_count}</td>
-                        <td style="color:rgba(245,245,245,0.45); font-size:0.85rem;">
-                            ${new Date(row.last_played).toLocaleDateString()}
-                        </td>
-                    </tr>
-                `).join('');
-            } catch (err) {
-                tbody.innerHTML = `<tr><td colspan="4" style="text-align:center; color:rgba(245,245,245,0.4); padding:40px;">
-                    Could not load charts — make sure the server is running.
-                </td></tr>`;
-            }
-        }
-
-        loadCharts();
-    </script>
 
     <footer><p class="footer">слухайте українське!</p></footer>
     <script src="parallax.js" defer></script>
