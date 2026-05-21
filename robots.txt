@@ -1,0 +1,10 @@
+User-agent: YandexBot
+Disallow: /
+
+User-agent: YandexImages
+Disallow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://snshkk0.github.io/uamuse/sitemap.xml
