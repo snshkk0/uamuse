@@ -1,5 +1,6 @@
 const CLIENT_ID    = 'aeb28cef57934414aa17b35206b7889f';
-const REDIRECT_URI = window.location.origin + window.location.pathname;
+const REDIRECT_URI = (window.location.origin + window.location.pathname)
+    .replace('127.0.0.1', 'localhost');
 
 const API_URL = CONFIG.API_URL;
 
