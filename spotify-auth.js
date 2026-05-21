@@ -1,6 +1,6 @@
 const CLIENT_ID = 'aeb28cef57934414aa17b35206b7889f';
 const REDIRECT_URI = 'https://snshkk0.github.io/uamuse/log_in.html';
-const SCOPES = 'user-read-private user-read-email';
+const SCOPES = 'user-read-private user-read-email user-read-recently-played';
 
 function generateRandomString(length) {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
