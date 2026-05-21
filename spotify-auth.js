@@ -1,11 +1,9 @@
-const CLIENT_ID   = 'aeb28cef57934414aa17b35206b7889f';
-const REDIRECT_URI = window.location.hostname === 'localhost'
+const CLIENT_ID    = 'aeb28cef57934414aa17b35206b7889f';
+const REDIRECT_URI = IS_LOCAL
     ? 'http://localhost:3000/log_in.html'
     : 'https://snshkk0.github.io/uamuse/log_in.html';
 
-const API_URL = window.location.hostname === 'localhost'
-    ? 'http://localhost:3001/api'
-    : 'https://your-server.railway.app/api'; // update this when you deploy
+const API_URL = CONFIG.API_URL;
 
 const SCOPES = 'user-read-private user-read-email user-read-recently-played';
 
