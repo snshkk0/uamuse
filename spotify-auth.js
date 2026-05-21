@@ -1,6 +1,7 @@
 const CLIENT_ID    = 'aeb28cef57934414aa17b35206b7889f';
-const REDIRECT_URI = (window.location.origin + window.location.pathname)
-    .replace('127.0.0.1', 'localhost');
+const REDIRECT_URI = window.location.hostname === 'snshkk0.github.io'
+    ? 'https://snshkk0.github.io/uamuse/log_in.html'
+    : 'https://snshkk0.github.io/uamuse/log_in.html'; // always use GH Pages for OAuth
 
 const API_URL = CONFIG.API_URL;
 
